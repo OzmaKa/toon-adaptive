@@ -1,0 +1,12 @@
+[
+  {"event": "page_view", "userId": "u_001", "timestamp": 1735689600, "path": "/home", "durationMs": 1200},
+  {"event": "click", "userId": "u_001", "timestamp": 1735689605, "path": "/home", "durationMs": 0},
+  {"event": "page_view", "userId": "u_002", "timestamp": 1735689610, "path": "/pricing", "durationMs": 3400},
+  {"event": "page_view", "userId": "u_003", "timestamp": 1735689615, "path": "/docs", "durationMs": 8900},
+  {"event": "click", "userId": "u_003", "timestamp": 1735689620, "path": "/docs", "durationMs": 0},
+  {"event": "signup", "userId": "u_004", "timestamp": 1735689625, "path": "/signup", "durationMs": 45000},
+  {"event": "page_view", "userId": "u_005", "timestamp": 1735689630, "path": "/home", "durationMs": 900},
+  {"event": "error", "userId": "u_002", "timestamp": 1735689635, "path": "/pricing", "durationMs": 0},
+  {"event": "page_view", "userId": "u_006", "timestamp": 1735689640, "path": "/blog", "durationMs": 15000},
+  {"event": "click", "userId": "u_006", "timestamp": 1735689645, "path": "/blog", "durationMs": 0}
+]

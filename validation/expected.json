@@ -1,0 +1,14 @@
+{
+  "staticreport.json": {
+    "expectedDecision": "json",
+    "reasoning": "column is optional on some issues, which breaks tabular form"
+  },
+  "randomuser-20.json": {
+    "expectedDecision": "toon",
+    "reasoning": "Made after seeing the synthetic sweep. All 20 records share identical keys, so TOON writes the nested field names once in a header and then 20 compact rows."
+  },
+  "boundary/small-uniform-array.json": {
+    "expectedDecision": "toon",
+    "reasoning": "REVISED after real-data validation: originally labeled json as 'too small', but measurement shows 11.1% savings, and real RandomUser slices of 2-4 items saved 13-19%. The size floor was overriding evidence. Caveat: the absolute saving here is only 3 tokens, so this is a ratio win, not a meaningful one."
+  }
+}

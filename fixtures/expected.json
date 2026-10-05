@@ -1,0 +1,52 @@
+{
+  "strong/github-issues.json": {
+    "expectedDecision": "toon",
+    "reasoning": "10 uniform objects, identical keys, shallow nesting (labels array of strings only), moderate field count. Strong tabular candidate."
+  },
+  "strong/db-query-users.json": {
+    "expectedDecision": "toon",
+    "reasoning": "Classic flat DB row export, fully uniform schema, no nesting at all. Textbook TOON case."
+  },
+  "strong/telemetry-events.json": {
+    "expectedDecision": "toon",
+    "reasoning": "Uniform event records, all scalar fields, high repetition of key names. Ideal tabular shape."
+  },
+  "strong/csv-export.json": {
+    "expectedDecision": "toon",
+    "reasoning": "Literally CSV-shaped data as JSON. Should be one of the strongest possible candidates."
+  },
+  "weak/nested-config.json": {
+    "expectedDecision": "json",
+    "reasoning": "No arrays at all, pure deeply nested object tree. Zero tabular coverage."
+  },
+  "weak/heterogeneous-feed.json": {
+    "expectedDecision": "json",
+    "reasoning": "Array items have completely different shapes depending on 'type'. Cannot tabularize without massive sparse-key waste."
+  },
+  "weak/recursive-comments.json": {
+    "expectedDecision": "json",
+    "reasoning": "Self-referential tree structure, unbounded recursive nesting via 'replies'."
+  },
+  "boundary/small-uniform-array.json": {
+    "expectedDecision": "toon",
+    "reasoning": "REVISED after real-data validation: measured 11.1 percent savings and real RandomUser slices of 2-4 items saved 13-19 percent, so the size floor was overriding evidence. Absolute saving is only 3 tokens, so this is a ratio win, not a meaningful one."
+  },
+  "boundary/partial-uniformity.json": {
+    "expectedDecision": "json",
+    "reasoning": "8 items but 3 have extra optional fields the others lack. Sparse/optional keys break clean tabular form."
+  },
+  "boundary/mixed-metadata-plus-table.json": {
+    "expectedDecision": "toon",
+    "reasoning": "20-item uniform users array dominates the payload by weight; pagination metadata is small by comparison. Tests weighted rollup."
+  },
+  "boundary/below-threshold-savings.json": {
+    "expectedDecision": "json",
+    "reasoning": "Structurally uniform but long free-text values dominate tokens, not JSON punctuation. Core test of structural-vs-economic divergence.",
+    "critical": true
+  },
+  "boundary/structure-vs-tokens-disagreement.json": {
+    "expectedDecision": "toon",
+    "reasoning": "REVISED after real measurement: originally hypothesized marginal savings due to minimal JSON overhead on tiny objects, but real tiktoken measurement shows 14.3% savings — a genuine, meaningful win. Original hypothesis was wrong; corrected based on evidence.",
+    "critical": true
+  }
+}

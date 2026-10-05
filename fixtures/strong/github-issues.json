@@ -1,0 +1,12 @@
+[
+  {"id": 1, "number": 101, "title": "useEffect cleanup not firing on unmount", "state": "open", "user": "devuser1", "labels": "bug,hooks", "comments": 4, "created_at": "2026-08-01T10:15:00Z"},
+  {"id": 2, "number": 102, "title": "Suspense boundary flickers on slow network", "state": "open", "user": "devuser2", "labels": "bug", "comments": 12, "created_at": "2026-08-02T11:20:00Z"},
+  {"id": 3, "number": 103, "title": "TypeScript types missing for useTransition", "state": "closed", "user": "devuser3", "labels": "typescript,enhancement", "comments": 2, "created_at": "2026-08-03T08:00:00Z"},
+  {"id": 4, "number": 104, "title": "Concurrent rendering breaks focus management", "state": "open", "user": "devuser4", "labels": "bug,accessibility", "comments": 8, "created_at": "2026-08-04T12:00:00Z"},
+  {"id": 5, "number": 105, "title": "Docs example for useMemo is outdated", "state": "open", "user": "devuser5", "labels": "documentation", "comments": 1, "created_at": "2026-08-05T09:30:00Z"},
+  {"id": 6, "number": 106, "title": "Error boundary swallows async errors", "state": "open", "user": "devuser6", "labels": "bug", "comments": 15, "created_at": "2026-08-06T13:00:00Z"},
+  {"id": 7, "number": 107, "title": "Strict mode double-invokes effects unexpectedly", "state": "closed", "user": "devuser7", "labels": "bug,strict-mode", "comments": 6, "created_at": "2026-08-07T10:45:00Z"},
+  {"id": 8, "number": 108, "title": "Ref forwarding fails with memo wrapped components", "state": "open", "user": "devuser8", "labels": "bug,refs", "comments": 3, "created_at": "2026-08-08T14:00:00Z"},
+  {"id": 9, "number": 109, "title": "Feature request: built-in debounce hook", "state": "open", "user": "devuser9", "labels": "enhancement", "comments": 20, "created_at": "2026-08-09T15:30:00Z"},
+  {"id": 10, "number": 110, "title": "Context provider re-renders all consumers unnecessarily", "state": "open", "user": "devuser10", "labels": "bug,performance", "comments": 9, "created_at": "2026-08-10T16:00:00Z"}
+]

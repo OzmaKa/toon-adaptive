@@ -1,0 +1,21 @@
+{
+  "name": "toon-adaptive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "typescript": "^7.0.2"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "@toon-format/toon": "^4.1.1",
+    "js-tiktoken": "^1.0.21"
+  }
+}

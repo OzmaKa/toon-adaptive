@@ -1,0 +1,35 @@
+{
+  "pagination": {
+    "page": 1,
+    "perPage": 20,
+    "totalPages": 14,
+    "totalItems": 273,
+    "links": {
+      "next": "/api/users?page=2",
+      "prev": null,
+      "self": "/api/users?page=1"
+    }
+  },
+  "users": [
+    {"id": 1, "name": "Alice", "email": "alice@example.com", "active": true},
+    {"id": 2, "name": "Bilal", "email": "bilal@example.com", "active": true},
+    {"id": 3, "name": "Carla", "email": "carla@example.com", "active": false},
+    {"id": 4, "name": "Dario", "email": "dario@example.com", "active": true},
+    {"id": 5, "name": "Elin", "email": "elin@example.com", "active": true},
+    {"id": 6, "name": "Faisal", "email": "faisal@example.com", "active": true},
+    {"id": 7, "name": "Grace", "email": "grace@example.com", "active": false},
+    {"id": 8, "name": "Hassan", "email": "hassan@example.com", "active": true},
+    {"id": 9, "name": "Ines", "email": "ines@example.com", "active": true},
+    {"id": 10, "name": "Jorge", "email": "jorge@example.com", "active": true},
+    {"id": 11, "name": "Kira", "email": "kira@example.com", "active": false},
+    {"id": 12, "name": "Liam", "email": "liam@example.com", "active": true},
+    {"id": 13, "name": "Mona", "email": "mona@example.com", "active": true},
+    {"id": 14, "name": "Nabil", "email": "nabil@example.com", "active": true},
+    {"id": 15, "name": "Omar", "email": "omar@example.com", "active": false},
+    {"id": 16, "name": "Priya", "email": "priya@example.com", "active": true},
+    {"id": 17, "name": "Quinn", "email": "quinn@example.com", "active": true},
+    {"id": 18, "name": "Rami", "email": "rami@example.com", "active": true},
+    {"id": 19, "name": "Sara", "email": "sara@example.com", "active": false},
+    {"id": 20, "name": "Tariq", "email": "tariq@example.com", "active": true}
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {"id": 1, "name": "Widget A", "price": 9.99},
+  {"id": 2, "name": "Widget B", "price": 14.99},
+  {"id": 3, "name": "Widget C", "price": 19.99, "discount": 0.1},
+  {"id": 4, "name": "Widget D", "price": 24.99},
+  {"id": 5, "name": "Widget E", "price": 29.99, "discount": 0.2, "note": "limited stock"},
+  {"id": 6, "name": "Widget F", "price": 34.99},
+  {"id": 7, "name": "Widget G", "price": 39.99},
+  {"id": 8, "name": "Widget H", "price": 44.99, "discount": 0.15}
+]

@@ -1,0 +1,33 @@
+{
+  "id": "c1",
+  "author": "alice",
+  "body": "Top level comment",
+  "replies": [
+    {
+      "id": "c2",
+      "author": "bob",
+      "body": "A reply",
+      "replies": [
+        {
+          "id": "c3",
+          "author": "carol",
+          "body": "A nested reply",
+          "replies": [
+            {
+              "id": "c4",
+              "author": "dave",
+              "body": "Even deeper",
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "author": "eve",
+      "body": "Another top-level reply",
+      "replies": []
+    }
+  ]
+}

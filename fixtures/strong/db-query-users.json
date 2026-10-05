@@ -1,0 +1,14 @@
+[
+  {"id": 1, "name": "Alice Nassar", "email": "alice@example.com", "role": "admin", "active": true, "created_at": "2025-01-15"},
+  {"id": 2, "name": "Bilal Hassan", "email": "bilal@example.com", "role": "member", "active": true, "created_at": "2025-01-16"},
+  {"id": 3, "name": "Carla Nunez", "email": "carla@example.com", "role": "member", "active": false, "created_at": "2025-01-18"},
+  {"id": 4, "name": "Dario Conti", "email": "dario@example.com", "role": "member", "active": true, "created_at": "2025-01-20"},
+  {"id": 5, "name": "Elin Karlsson", "email": "elin@example.com", "role": "admin", "active": true, "created_at": "2025-01-22"},
+  {"id": 6, "name": "Faisal Rahman", "email": "faisal@example.com", "role": "member", "active": true, "created_at": "2025-01-25"},
+  {"id": 7, "name": "Grace Kim", "email": "grace@example.com", "role": "member", "active": false, "created_at": "2025-01-27"},
+  {"id": 8, "name": "Hassan Ali", "email": "hassan@example.com", "role": "member", "active": true, "created_at": "2025-01-29"},
+  {"id": 9, "name": "Ines Moreau", "email": "ines@example.com", "role": "admin", "active": true, "created_at": "2025-02-01"},
+  {"id": 10, "name": "Jorge Diaz", "email": "jorge@example.com", "role": "member", "active": true, "created_at": "2025-02-03"},
+  {"id": 11, "name": "Kira Novak", "email": "kira@example.com", "role": "member", "active": false, "created_at": "2025-02-05"},
+  {"id": 12, "name": "Liam O'Brien", "email": "liam@example.com", "role": "member", "active": true, "created_at": "2025-02-07"}
+]

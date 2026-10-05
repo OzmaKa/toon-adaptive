@@ -1,0 +1,42 @@
+{
+  "build": {
+    "target": "es2022",
+    "outDir": "dist",
+    "sourcemap": true,
+    "rollupOptions": {
+      "input": {
+        "main": "src/index.ts",
+        "worker": "src/worker.ts"
+      },
+      "output": {
+        "manualChunks": {
+          "vendor": ["react", "react-dom"],
+          "utils": ["lodash", "date-fns"]
+        },
+        "assetFileNames": {
+          "images": "assets/img/[name].[hash][ext]",
+          "fonts": "assets/fonts/[name].[hash][ext]"
+        }
+      }
+    }
+  },
+  "server": {
+    "port": 5173,
+    "proxy": {
+      "/api": {
+        "target": "http://localhost:4000",
+        "changeOrigin": true,
+        "headers": {
+          "X-Forwarded-Proto": "https"
+        }
+      }
+    }
+  },
+  "resolve": {
+    "alias": {
+      "@": "src",
+      "@components": "src/components",
+      "@utils": "src/utils"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {"sku": "A1001", "product": "Wireless Mouse", "category": "Electronics", "price": 19.99, "stock": 342},
+  {"sku": "A1002", "product": "USB-C Cable", "category": "Electronics", "price": 9.99, "stock": 890},
+  {"sku": "A1003", "product": "Notebook A5", "category": "Stationery", "price": 3.49, "stock": 1200},
+  {"sku": "A1004", "product": "Desk Lamp", "category": "Furniture", "price": 24.99, "stock": 75},
+  {"sku": "A1005", "product": "Ballpoint Pen Pack", "category": "Stationery", "price": 2.99, "stock": 2100},
+  {"sku": "A1006", "product": "Bluetooth Speaker", "category": "Electronics", "price": 49.99, "stock": 130},
+  {"sku": "A1007", "product": "Office Chair", "category": "Furniture", "price": 129.99, "stock": 40},
+  {"sku": "A1008", "product": "Sticky Notes", "category": "Stationery", "price": 1.99, "stock": 3000}
+]

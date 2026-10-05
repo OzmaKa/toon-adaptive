@@ -1,0 +1,8 @@
+[
+  {"type": "post", "id": "p1", "author": "alice", "body": "Just shipped a new feature!", "likes": 34},
+  {"type": "ad", "id": "ad1", "sponsor": "Acme Corp", "creative": {"headline": "50% off today", "imageUrl": "https://x.com/a.png"}, "cta": "Shop Now"},
+  {"type": "comment", "id": "c1", "postId": "p1", "author": "bob", "body": "Nice work!", "parentComment": null},
+  {"type": "post", "id": "p2", "author": "carol", "body": "Thoughts on the new API design?", "likes": 12, "poll": {"options": ["Love it", "Hate it", "Neutral"], "votes": [40, 5, 15]}},
+  {"type": "system", "id": "s1", "message": "carol started following you", "actorId": "carol"},
+  {"type": "ad", "id": "ad2", "sponsor": "Beta Inc", "creative": {"headline": "Try our new app", "videoUrl": "https://x.com/v.mp4"}, "cta": "Learn More"}
+]
