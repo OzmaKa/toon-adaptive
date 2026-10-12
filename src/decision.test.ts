@@ -1,7 +1,7 @@
 import { describe, test } from "node:test";
 import assert from "node:assert/strict";
 import { analyze } from "./decision";
-import type { Tokenizer } from "./types";
+import type { Tokenizer } from "../src/types";
 
 const table = (n: number) =>
   Array.from({ length: n }, (_, i) => ({ id: i, name: `user${i}`, email: `user${i}@example.com`, active: i % 2 === 0 }));

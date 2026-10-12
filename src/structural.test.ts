@@ -17,15 +17,15 @@ describe("analyzeStructure", () => {
 
   test("top-level keys become subtrees; a root array is one subtree at path ''", () => {
     const wrapped = structure({ meta: { page: 1 }, users: table(5) });
-    assert.deepEqual(wrapped.subtrees.map((x) => x.path), ["meta", "users"]);
+    assert.deepEqual(wrapped.subtrees.map((x: { path: any; }) => x.path), ["meta", "users"]);
     const root = structure(table(5));
-    assert.deepEqual(root.subtrees.map((x) => x.path), [""]);
+    assert.deepEqual(root.subtrees.map((x: { path: any; }) => x.path), [""]);
   });
 
   test("a key missing from some items is flagged as sparse and lowers uniformity", () => {
     const items = Array.from({ length: 9 }, (_, i) => (i % 3 === 0 ? { id: i } : { id: i, column: 1 }));
     const s = structure(items);
-    assert.ok(s.subtrees[0].irregularityFlags.some((f) => f.startsWith("sparse-keys")));
+    assert.ok(s.subtrees[0].irregularityFlags.some((f: string) => f.startsWith("sparse-keys")));
     assert.ok(s.aggregateUniformity < 1);
   });
 
@@ -43,7 +43,7 @@ describe("analyzeStructure", () => {
     };
     const s = structure(tree);
     assert.equal(s.tabularCoverage, 0);
-    assert.ok(s.subtrees[0].irregularityFlags.some((f) => f.startsWith("self-referential-recursion")));
+    assert.ok(s.subtrees[0].irregularityFlags.some((f: string) => f.startsWith("self-referential-recursion")));
   });
 
   test("a payload with no arrays has zero tabular coverage", () => {
