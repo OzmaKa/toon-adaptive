@@ -2,21 +2,57 @@
   "name": "toon-adaptive",
   "version": "0.1.0",
   "description": "Decides whether a JSON payload should go to an LLM as TOON or stay JSON, using real token measurement instead of guesswork.",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "tsc && node --test dist/structural.test.js dist/decision.test.js dist/fixtures.test.js"
-  },
   "keywords": [
     "toon",
+    "token-oriented-object-notation",
     "llm",
     "token-optimization",
+    "tokens",
     "json",
+    "serialization",
+    "prompt-engineering",
+    "tiktoken",
+    "ai",
     "typescript",
     "developer-tools"
   ],
-  "author": "",
+  "homepage": "https://github.com/OzmaKa/toon-adaptive#readme",
+  "bugs": {
+    "url": "https://github.com/OzmaKa/toon-adaptive/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OzmaKa/toon-adaptive.git"
+  },
+  "author": "Oussamah Kabalan",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/run-*"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.12"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "npm run clean && tsc",
+    "test": "npm run build && node --test dist/structural.test.js dist/decision.test.js dist/fixtures.test.js",
+    "prepublishOnly": "npm test"
+  },
   "devDependencies": {
     "@types/node": "^26.6.3",
     "typescript": "^7.0.2"
@@ -25,14 +61,5 @@
   "dependencies": {
     "@toon-format/toon": "^4.1.1",
     "js-tiktoken": "^1.0.21"
-  },
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "!dist/**/*.test.*",
-    "!dist/run-*"
-  ],
-  "engines": {
-    "node": ">=22.12"
   }
 }
