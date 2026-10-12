@@ -1,14 +1,22 @@
 {
   "name": "toon-adaptive",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Decides whether a JSON payload should go to an LLM as TOON or stay JSON, using real token measurement instead of guesswork.",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "tsc && node --test dist/structural.test.js dist/decision.test.js dist/fixtures.test.js"
   },
-  "keywords": [],
+  "keywords": [
+    "toon",
+    "llm",
+    "token-optimization",
+    "json",
+    "typescript",
+    "developer-tools"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^26.6.3",
     "typescript": "^7.0.2"
@@ -17,5 +25,14 @@
   "dependencies": {
     "@toon-format/toon": "^4.1.1",
     "js-tiktoken": "^1.0.21"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/run-*"
+  ],
+  "engines": {
+    "node": ">=22.12"
   }
 }

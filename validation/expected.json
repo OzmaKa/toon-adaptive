@@ -7,8 +7,8 @@
     "expectedDecision": "toon",
     "reasoning": "Made after seeing the synthetic sweep. All 20 records share identical keys, so TOON writes the nested field names once in a header and then 20 compact rows."
   },
-  "boundary/small-uniform-array.json": {
-    "expectedDecision": "toon",
-    "reasoning": "REVISED after real-data validation: originally labeled json as 'too small', but measurement shows 11.1% savings, and real RandomUser slices of 2-4 items saved 13-19%. The size floor was overriding evidence. Caveat: the absolute saving here is only 3 tokens, so this is a ratio win, not a meaningful one."
+  "cmc-price-10.json": {
+    "expectedDecision": "json",
+    "reasoning": "Prediction written by Claude before running, informed by a synthetic size sweep. Each row is only id plus a long decimal price, so the digits cost the same tokens in either format, and the fixed status block does not shrink with more coins. Expect savings in the low single digits, under the 10 percent threshold."
   }
 }
