@@ -3,7 +3,6 @@
 
 [![npm version](https://img.shields.io/npm/v/toon-adaptive.svg)](https://www.npmjs.com/package/toon-adaptive)
 [![CI](https://github.com/OzmaKa/toon-adaptive/actions/workflows/ci.yml/badge.svg)](https://github.com/OzmaKa/toon-adaptive/actions/workflows/ci.yml)
-[![license: MIT](https://img.shields.io/npm/l/toon-adaptive.svg)](LICENSE)
 [![node](https://img.shields.io/node/v/toon-adaptive.svg)](package.json)
 
 Decides whether a JSON payload should go to an LLM as [TOON](https://www.npmjs.com/package/@toon-format/toon) or stay JSON, using real token measurement instead of guesswork.
