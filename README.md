@@ -1,4 +1,3 @@
-
 # toon-adaptive
 
 [![npm version](https://img.shields.io/npm/v/toon-adaptive.svg)](https://www.npmjs.com/package/toon-adaptive)
