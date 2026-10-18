@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/toon-adaptive.svg)](https://www.npmjs.com/package/toon-adaptive)
 [![CI](https://github.com/OzmaKa/toon-adaptive/actions/workflows/ci.yml/badge.svg)](https://github.com/OzmaKa/toon-adaptive/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/npm/l/toon-adaptive.svg)](LICENSE)
 [![node](https://img.shields.io/node/v/toon-adaptive.svg)](package.json)
 
 Decides whether a JSON payload should go to an LLM as [TOON](https://www.npmjs.com/package/@toon-format/toon) or stay JSON, using real token measurement instead of guesswork.
@@ -48,11 +49,11 @@ Everything runs locally: no network calls, no LLM. The first call loads the toke
 
 ### `analyze(payload, options?)`
 
-| Option                   | Default                               | Meaning                                                                      |
-| ------------------------ | ------------------------------------- | ---------------------------------------------------------------------------- |
-| `tokenizer`            | `cl100k_base` (via `js-tiktoken`) | Object with`name` and a synchronous `count(text)`                        |
-| `minSavingsRatio`      | `0.10`                              | Choose TOON only if measured savings are at least this fraction              |
-| `tabularCoverageFloor` | `0.20`                              | Return`json` without measuring if less of the payload than this is tabular |
+| Option                   | Default                               | Meaning                                                                       |
+| ------------------------ | ------------------------------------- | ----------------------------------------------------------------------------- |
+| `tokenizer`            | `cl100k_base` (via `js-tiktoken`) | Object with `name` and a synchronous `count(text)`                        |
+| `minSavingsRatio`      | `0.10`                              | Choose TOON only if measured savings are at least this fraction               |
+| `tabularCoverageFloor` | `0.20`                              | Return `json` without measuring if less of the payload than this is tabular |
 
 Bring your own tokenizer if you target a model whose tokenization differs:
 
@@ -67,7 +68,7 @@ analyze(payload, { tokenizer: { name: "my-model", count: (text) => myCount(text)
 | `decision`   | `"toon"` or `"json"`                                                                                                                             |
 | `reasons`    | Specific, human-readable reasons for the decision                                                                                                    |
 | `economics`  | `jsonTokens`, `toonTokens`, `tokensSaved`, `savingsRatio`, `measured`. `null` when a hard signal rejected the payload before measurement |
-| `structural` | Per-key`subtrees`, `tabularCoverage`, `aggregateUniformity`, `maxNestingDepth`, `irregularityFlags`                                        |
+| `structural` | Per-key `subtrees`, `tabularCoverage`, `aggregateUniformity`, `maxNestingDepth`, `irregularityFlags`                                       |
 | `config`     | The threshold and tokenizer name actually used                                                                                                       |
 
 ## How it decides
@@ -129,6 +130,14 @@ npm test
 ```
 
 `fixtures/` holds hand-built payloads and `validation/` holds real ones, each with an `expected.json` of the decision I predicted *before* running. To add a real payload: save it in `validation/`, write your prediction first, then run the tests. Issues and payloads that break the decision are very welcome.
+
+## Author
+
+Built by **Oussamah Kabalan**, an AI-augmented Software Engineer.
+
+- Portfolio: https://oussamah-kabalan.netlify.app
+- GitHub: https://github.com/OzmaKa
+- LinkedIn: https://www.linkedin.com/in/oussamah-kabalan
 
 ## License
 

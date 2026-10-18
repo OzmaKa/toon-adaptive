@@ -1,6 +1,6 @@
 {
   "name": "toon-adaptive",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Decides whether a JSON payload should go to an LLM as TOON or stay JSON, using real token measurement instead of guesswork.",
   "keywords": [
     "toon",
@@ -24,7 +24,10 @@
     "type": "git",
     "url": "git+https://github.com/OzmaKa/toon-adaptive.git"
   },
-  "author": "Oussamah Kabalan",
+  "author": {
+    "name": "Oussamah Kabalan",
+    "url": "https://oussamah-kabalan.netlify.app"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

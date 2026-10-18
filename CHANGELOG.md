@@ -1,5 +1,9 @@
-
 # Changelog
+
+## 0.1.1
+
+- Add author links to the README and package metadata.
+- CI: update GitHub Actions to Node 24-based versions and pin the runner to Ubuntu 24.04.
 
 ## 0.1.0
 
