@@ -1,4 +1,9 @@
+
 # Changelog
+
+## 0.1.2
+
+- Documentation and package metadata updates; no code changes.
 
 ## 0.1.1
 
