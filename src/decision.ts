@@ -5,32 +5,14 @@ import {
   TokenEconomics,
 } from "./types";
 import { analyzeStructure } from "./structural";
-import { measureEconomics } from "./economics";
+import { measureEconomicsInternal } from "./economics";
 import { defaultTokenizer } from "./tokenizer";
-
-// ---------------------------------------------------------------------------
-// Seeded, explicitly provisional thresholds.
-//
-// History of removed size heuristics (both were size proxies that overrode
-// real measurement, and both were removed after validation):
-// - minPayloadTokens: blocked structure-vs-tokens-disagreement.json
-//   (42 tokens, real 14.3% savings).
-// - minTabularArraySize: blocked 2-4 item slices of real RandomUser data
-//   that measured 13-19% savings. Break-even size depends on how many
-//   fields each object has, so no single fixed floor is correct.
-//
-// Open question: ratio-only decisions treat 6 saved tokens like 600.
-// A minimum absolute tokens-saved guard may be needed, but it needs more
-// evidence before picking a number.
-// ---------------------------------------------------------------------------
 
 const DEFAULT_CONFIG = {
   minSavingsRatio: 0.10,
   tabularCoverageFloor: 0.20,
 };
 
-// Tier 1 — hard signals. Structural only, no tokenizer/encoding cost paid.
-// Can only push toward "json" — never confirms "toon" by itself.
 function checkHardSignals(
   structural: StructuralAnalysis,
   config: typeof DEFAULT_CONFIG
@@ -53,7 +35,6 @@ function checkHardSignals(
   return null;
 }
 
-// Tier 3 — final decision from measured economics.
 function decideFromEconomics(
   economics: TokenEconomics,
   config: typeof DEFAULT_CONFIG
@@ -79,10 +60,21 @@ function decideFromEconomics(
   };
 }
 
-export function analyze(
+/**
+ * Internal variant used by smartEncode: identical decision logic, but
+ * also returns the TOON string produced during measurement (when
+ * measurement ran) so the caller never has to encode the same payload
+ * twice.
+ */
+export function analyzeInternal(
   payload: unknown,
   options: AnalyzeOptions = {}
-): AnalysisResult {
+): { result: AnalysisResult; toonString: string | null; jsonString: string | null } {
+  if (options.toonOptions && "replacer" in options.toonOptions) {
+    throw new TypeError(
+      "toonOptions.replacer is not supported: it changes the data being measured. Transform the payload before calling instead."
+    );
+  }
   const config = {
     minSavingsRatio: options.minSavingsRatio ?? DEFAULT_CONFIG.minSavingsRatio,
     tabularCoverageFloor:
@@ -95,15 +87,23 @@ export function analyze(
   const disqualifyReason = checkHardSignals(structural, config);
   if (disqualifyReason) {
     return {
-      decision: "json",
-      structural,
-      economics: null,
-      reasons: [disqualifyReason],
-      config: { minSavingsRatio: config.minSavingsRatio, tokenizerUsed: tokenizer.name },
+      result: {
+        decision: "json",
+        structural,
+        economics: null,
+        reasons: [disqualifyReason],
+        config: { minSavingsRatio: config.minSavingsRatio, tokenizerUsed: tokenizer.name },
+      },
+      toonString: null,
+      jsonString: null,
     };
   }
 
-  const economics = measureEconomics(payload, tokenizer);
+  const { economics, toonString, jsonString } = measureEconomicsInternal(
+    payload,
+    tokenizer,
+    options.toonOptions
+  );
   const { decision, reason } = decideFromEconomics(economics, config);
 
   const reasons: string[] = [reason];
@@ -114,10 +114,21 @@ export function analyze(
   }
 
   return {
-    decision,
-    structural,
-    economics,
-    reasons,
-    config: { minSavingsRatio: config.minSavingsRatio, tokenizerUsed: tokenizer.name },
+    result: {
+      decision,
+      structural,
+      economics,
+      reasons,
+      config: { minSavingsRatio: config.minSavingsRatio, tokenizerUsed: tokenizer.name },
+    },
+    toonString,
+    jsonString,
   };
+}
+
+export function analyze(
+  payload: unknown,
+  options: AnalyzeOptions = {}
+): AnalysisResult {
+  return analyzeInternal(payload, options).result;
 }

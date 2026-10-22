@@ -1,6 +1,6 @@
 {
   "name": "toon-adaptive",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Decides whether a JSON payload should go to an LLM as TOON or stay JSON, using real token measurement instead of guesswork.",
   "keywords": [
     "toon",
@@ -53,7 +53,7 @@
   "scripts": {
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
     "build": "npm run clean && tsc",
-    "test": "npm run build && node --test dist/structural.test.js dist/decision.test.js dist/fixtures.test.js",
+    "test": "npm run build && node --test dist/structural.test.js dist/decision.test.js dist/smartEncode.test.js dist/fixtures.test.js",
     "prepublishOnly": "npm test"
   },
   "devDependencies": {

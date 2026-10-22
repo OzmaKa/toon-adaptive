@@ -1,4 +1,5 @@
 export { analyze } from "./decision";
+export { smartEncode } from "./smartEncode";
 export { defaultTokenizer } from "./tokenizer";
 export type {
   AnalysisResult,
@@ -8,4 +9,6 @@ export type {
   SubtreeKind,
   TokenEconomics,
   Tokenizer,
+  ToonOptions,
 } from "./types";
+export type { SmartEncodeOptions, SmartEncodeResult } from "./smartEncode";

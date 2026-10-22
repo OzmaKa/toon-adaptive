@@ -1,5 +1,13 @@
-
 # Changelog
+
+## 0.2.0
+
+- Add `smartEncode(payload, options?)`: analyzes, then returns `{ format, data, analysis }` with the TOON or JSON string.
+- `verify` (on by default): decodes the TOON output and checks it preserves everything JSON would, falling back to JSON with a reason if it does not.
+- Add `toonOptions` (`delimiter`, `indentSize`) to `analyze()` and `smartEncode()`. It is applied to both measurement and output, so the decision matches the output. `replacer` is not supported.
+- `smartEncode` throws a `TypeError` for payloads JSON cannot serialize, such as `undefined`.
+- Export the `ToonOptions`, `SmartEncodeOptions` and `SmartEncodeResult` types.
+- Tests: 68 (was 40), including every fixture and real-world payload run through `smartEncode`.
 
 ## 0.1.2
 
